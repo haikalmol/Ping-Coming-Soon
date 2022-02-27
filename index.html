@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/c2adb54c46.js" crossorigin="anonymous"></script>
+    <title>Frontend Mentor | Ping coming soon page</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img class="logo" src="./images/logo.svg" alt="Ping's logo   " />
+        <h1>We are launching <span class="dark-bold">soon!</span></h1>
+        <p>Subscribe and get notified</p>
+      </header>
+      <form class="sign-up">
+        <input type="email" class="form-input" placeholder="Your email address" />
+        <button class="form-button">Notify Me</button>
+      </form>
+      <div class="form-error hidden">
+        <small>Please provide a valid email address</small>
+      </div>
+      <picture>
+        <img src="./images/illustration-dashboard.png" alt="" />
+      </picture>
+      <footer>
+        <div class="social-icons">
+          <a href="#" class="social-icon-container" aria-label="Ping's Facebook">
+            <i aria-hidden="true" class="fab fa-facebook-f social-icon"></i>
+          </a>
+          <a href="#" class="social-icon-container" aria-label="Ping's Twitter">
+            <i aria-hidden="true" class="fab fa-twitter social-icon"></i>
+          </a>
+          <a href="#" class="social-icon-container" aria-label="Ping's Instagram">
+            <i aria-hidden="true" class="fab fa-instagram social-icon"></i>
+          </a>
+        </div>
+        <small class="copyright">&copy; Copyright Ping. All rights reserved.</small>
+      </footer>
+    </main>
+  </body>
+
+  <script>
+    const button = document.querySelector(".form-button");
+    const input = document.querySelector(".form-input");
+    const errorText = document.querySelector(".hidden");
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      input.classList.add("error");
+      errorText.classList.remove("hidden");
+
+      setTimeout(() => {
+        input.classList.remove("error");
+        errorText.classList.add("hidden");
+      }, 2000);
+    });
+  </script>
+</html>
